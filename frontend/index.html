@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Interview Copilot</title>
+</head>
+<body>
+
+<h2>Upload Resume</h2>
+
+<input type="file" id="resume" />
+<button onclick="uploadResume()">Upload</button>
+
+<h3 id="response"></h3>
+
+<script>
+async function uploadResume() {
+  const fileInput = document.getElementById("resume");
+  const file = fileInput.files[0];
+
+  const formData = new FormData();
+  formData.append("file", file);
+
+  const res = await fetch("http://localhost:8000/upload-resume", {
+    method: "POST",
+    body: formData
+  });
+
+  const data = await res.json();
+
+  document.getElementById("response").innerText =
+    "Question: " + data.question;
+}
+</script>
+
+</body>
+</html>
