@@ -1,7 +1,5 @@
 from fastapi import FastAPI
-from app.routes import resume , interview , confidence
-import threading
-from app.services.ai_engine import start_confidence_tracking
+from app.routes import resume , interview 
 from fastapi.middleware.cors import CORSMiddleware
 
 threading.Thread(target=start_confidence_tracking, daemon=True).start()
