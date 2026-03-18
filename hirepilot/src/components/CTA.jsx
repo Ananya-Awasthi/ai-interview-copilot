@@ -24,7 +24,7 @@ export default function CTA() {
       </div>
 
       <div className="cta-note">
-        Team SmashCoders  · aananya255@gmail.com ·niyatikumra@gmail.com ·samridhpathak007@gmail.com
+        Team SmashCoders  · aananya255@gmail.com ·niyatikumra@gmail.com ·samridhpathak007@gmail.com ·ridhima089@gmail.com
       </div>
 
     </section>
