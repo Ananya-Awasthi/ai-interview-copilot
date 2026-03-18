@@ -9,7 +9,7 @@ threading.Thread(target=start_confidence_tracking, daemon=True).start()
 
 app = FastAPI()
 
-# ✅ CORS (VERY IMPORTANT FOR FRONTEND)
+# ✅ CORS (IMPORTANT)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
