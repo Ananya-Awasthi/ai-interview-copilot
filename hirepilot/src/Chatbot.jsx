@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 
-function Chatbot() {
+function Chatbot({open,setOpen}) {
 
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const [typing, setTyping] = useState(false);
   const [dots, setDots] = useState("");
   const [history, setHistory] = useState([]);
@@ -65,18 +65,28 @@ function Chatbot() {
 
   return (
     <>
-      {/* Floating Button */}
-      <button onClick={() => setOpen(!open)} style={styles.floatingBtn}>
-        💬
-      </button>
+     
 
       {/* Chat Window */}
       {open && (
         <div style={styles.container}>
 
           <div style={styles.header}>
-            AI Interview Coach
-          </div>
+  AI Interview Coach
+  <button
+    onClick={() => setOpen(false)}
+    style={{
+      float: "right",
+      background: "none",
+      border: "none",
+      color: "white",
+      cursor: "pointer",
+      fontSize: "16px"
+    }}
+  >
+    ❌
+  </button>
+</div>
 
           <div style={styles.chatBox}>
 
@@ -124,21 +134,6 @@ function Chatbot() {
 }
 
 const styles = {
-
-  floatingBtn: {
-    position: "fixed",
-    bottom: "20px",
-    right: "20px",
-    background: "#007bff",
-    color: "white",
-    border: "none",
-    borderRadius: "50%",
-    width: "60px",
-    height: "60px",
-    fontSize: "24px",
-    cursor: "pointer"
-  },
-
   container: {
     position: "fixed",
     bottom: "90px",
@@ -149,8 +144,12 @@ const styles = {
     background: "#fff",
     display: "flex",
     flexDirection: "column",
-    boxShadow: "0 0 10px rgba(0,0,0,0.2)"
+    boxShadow: "0 0 10px rgba(0,0,0,0.2)",
+
+    zIndex: 9999   // 🔥 ADD THIS LINE
   },
+
+  
 
   header: {
     background: "#007bff",

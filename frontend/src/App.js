@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Chatbot from "./Chatbot";
+import Chatbot from "../../hirepilot/src/Chatbot";
 
 function App() {
 
