@@ -14,7 +14,7 @@ db_path = os.path.join(BASE_DIR, "database", "chatbot_data.json")
 with open(db_path, "r") as f:
     data = json.load(f)
 
-# Extract questions and answers
+# Extract questions and answers form this
 questions = [item["question"] for item in data]
 answers = [item["answer"] for item in data]
 
