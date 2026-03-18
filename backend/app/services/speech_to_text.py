@@ -1,24 +1,28 @@
-from faster_whisper import WhisperModel
-import os
-from dotenv import load_dotenv
+from fastapi import FastAPI
+from app.routes import resume, interview, confidence
+from fastapi.middleware.cors import CORSMiddleware
+import threading
+from app.services.vision import start_confidence_tracking
 
-load_dotenv()
-hf_token = os.getenv("HF_TOKEN")
-if hf_token:
-    os.environ["HF_TOKEN"] = hf_token
+# 🔥 Start background confidence tracking
+threading.Thread(target=start_confidence_tracking, daemon=True).start()
 
-print("Loading Whisper model once...")
+app = FastAPI()
 
-try:
-    model = WhisperModel("tiny.en", compute_type="int8")
-    print("Model loaded ✅")
-except Exception as e:
-    print("Error loading model:", e)
-def transcribe_audio(file_path):
-    segments, _ = model.transcribe(file_path)
+# ✅ CORS (IMPORTANT)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-    text = ""
-    for segment in segments:
-        text += segment.text + " "
+# ✅ ROUTES
+app.include_router(resume.router)
+app.include_router(interview.router)
+app.include_router(confidence.router)
 
-    return text.strip()
+@app.get("/")
+def home():
+    return {"message": "AI Interview Backend Running 🚀"}
