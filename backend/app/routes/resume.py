@@ -23,7 +23,8 @@ async def upload_resume(
 
         return {
             "message": "Resume processed",
-            "resume_text": resume_text
+            "resume_text": resume_text,
+            "question": question
         }
 
     except Exception as e:
