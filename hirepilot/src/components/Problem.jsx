@@ -4,7 +4,7 @@ export default function Problem() {
       <div className="si">
         
         <div className="sh">
-          <div className="eyebrow">Problem Statement</div>
+          <div className="eyebrow">Problem </div>
           <h2 className="stitle">
             Why interview prep is <em>broken</em> today.
           </h2>

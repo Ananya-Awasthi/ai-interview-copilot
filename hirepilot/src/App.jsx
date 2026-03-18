@@ -7,6 +7,8 @@ import Who from "./components/Who";
 import Impact from "./components/Impact";
 import  Tech from "./components/Tech";
 import CTA from "./components/CTA";
+import chatButton from "./components/ChatButton";
+import ChatButton from "./components/ChatButton";
 export default function App() {
   return (
     <>
@@ -19,6 +21,7 @@ export default function App() {
       <Impact />
       <Tech />
       <CTA />
+      <ChatButton />
     </>
   );
 }

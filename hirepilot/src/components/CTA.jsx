@@ -10,7 +10,7 @@ export default function CTA() {
       </h2>
 
       <p>
-        Your personal AI Interview Copilot — built in 24 hours, designed to change how you prepare forever.
+        Your personal AI Interview Copilot —  designed to change how you prepare forever.
       </p>
 
       <div className="cta-btns">

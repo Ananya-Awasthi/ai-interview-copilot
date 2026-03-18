@@ -243,3 +243,58 @@ footer{background:var(--b950);padding:36px 52px;display:flex;align-items:center;
   footer{flex-direction:column;gap:12px;text-align:center;padding:28px 20px;}
   .foot-r{text-align:center;}
 }
+
+/*chatboatavtar */
+.chat-fab{
+  position:fixed;
+  bottom:32px;
+  right:32px;
+  z-index:999;
+}
+
+.chat-btn{
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--b600),var(--b400));
+  border:3px solid var(--white);
+  box-shadow:0 6px 28px rgba(37,99,235,0.45);
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:transform .2s,box-shadow .2s;
+}
+
+.chat-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 10px 36px rgba(37,99,235,0.55);
+}
+
+.chat-btn:active{
+  transform:scale(0.95);
+}
+
+/* avatar face */
+.av-face{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:linear-gradient(160deg,#DBEAFE,#EDE9FE);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* green online dot */
+.chat-btn::after{
+  content:'';
+  position:absolute;
+  bottom:4px;
+  right:4px;
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:#22C55E;
+  border:2px solid #fff;
+}

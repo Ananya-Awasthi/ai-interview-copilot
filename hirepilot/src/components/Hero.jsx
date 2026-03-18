@@ -52,7 +52,7 @@ export default function Hero() {
             <div className="hst"><div className="hst-v">360°</div><div className="hst-l">Analysis</div></div>
             <div className="hst"><div className="hst-v">Live</div><div className="hst-l">AI Feedback</div></div>
             <div className="hst"><div className="hst-v">10+</div><div className="hst-l">Job Roles</div></div>
-            <div className="hst"><div className="hst-v">24hr</div><div className="hst-l">Hackathon Build</div></div>
+            
           </div>
         </div>
 

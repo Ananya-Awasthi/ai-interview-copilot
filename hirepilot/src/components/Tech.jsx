@@ -14,7 +14,7 @@ export default function Tech() {
             </h2>
 
             <p className="sdesc" style={{textAlign:"left"}}>
-              Every component chosen for speed, accuracy, and the ability to ship in 24 hours without compromising quality.
+              Every component chosen for speed, accuracy, and the ability to ship in  without compromising quality.
             </p>
 
             <div className="tech-pills">
